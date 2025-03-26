@@ -15,32 +15,102 @@
     <link rel="stylesheet" href="./custom.css">
 </head>
 
-<body>
+<body class="bg-white">
     <header></header>
     <main>
         <div class="arraySection py-5">
-            <div class="container border bg-light rounded">
-                <div class="row">
-                    <div class="col-12">
+            <div class="container-fluid m-auto bg-white rounded p-5">
+                <div class="row"> <!--Title -->
+                    <div class="col d-flex align-items-center justify-content-center">
+                        <h2 class="mb-4 text-dark font-weight-bold text-uppercase">Array Methods</h2>
+                    </div>
+                </div>
+                <div class="row"> <!--input box -->
+                    <div class="col">
                         <div class="arrayBox d-flex py-3">
                             <input type="text" id="input"
-                                class="inputFiled px-2 py-3 w-75 m-auto rounded shadow border-0"
+                                class="inputFiled bg-light px-2 py-3 w-75 m-auto rounded shadow border-0"
                                 placeholder="Enter an Item">
                         </div>
                     </div>
                 </div>
-                <div class="row px-5">
-                    <div class="col py-2 px-5 d-flex align-items-center justify-content-around flex-wrap m-auto">
-                        <button class="btn px-5 btn-success font-weight-bold text-white m-1 py-4" id="pushBtn" onclick="pushItem()">Push</button>
-                        <button class="btn px-5 btn-success font-weight-bold text-white m-1 py-4" id="popBtn" onclick="popItem()">Push</button>
+                <div class="row pt-3 w-75 m-auto"> <!-- button row 1-->
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-center justify-content-center">
+                        <button class="btn w-100 btn-success font-weight-bold text-white m-1 py-3 m-2" id="pushBtn"
+                        onclick="pushItem()">Push </button>
+                    </div>
 
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-center justify-content-center">
+                        <button class="btn w-100 btn-success font-weight-bold text-white m-1 py-3 m-2" id="popBtn"
+                        onclick="popItem()">Pop</button>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-center justify-content-center">
+                        <button class="btn w-100 btn-success font-weight-bold text-white m-1 py-3 m-2" id="deleteBtn"
+                        onclick="deleteItem()">Delete</button>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-center justify-content-center">
+                        <button class="btn w-100 btn-success font-weight-bold text-white m-1 py-3 m-2" id="shiftBtn"
+                        onclick="shiftItem()">Shift</button>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-center justify-content-center">
+                        <button class="btn w-100 btn-success font-weight-bold text-white m-1 py-3 m-2" id="unShiftBtn"
+                        onclick="unshiftItem()">UnShift </button>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-center justify-content-center">
+                        <button class="btn w-100 btn-success font-weight-bold text-white m-1 py-3 m-2" id="findBtn"
+                        onclick="findItem()">Find</button>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-center justify-content-center">
+                        <button class="btn w-100 btn-success font-weight-bold text-white m-1 py-3 m-2" id="reverseBtn"
+                        onclick="reverseItem()">Reverse </button>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-center justify-content-center">
+                        <button class="btn w-100 btn-success font-weight-bold text-white m-1 py-3 m-2" id="sortBtn"
+                        onclick="sortItem()">Sort</button>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-center justify-content-center">
+                        <button class="btn w-100 btn-success font-weight-bold text-white m-1 py-3 m-2" id="concatBtn"
+                        onclick="concatItem()">Concat </button>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-center justify-content-center">
+                        <button class="btn w-100 btn-success font-weight-bold text-white m-1 py-3 m-2" id="filterBtn"
+                        onclick="filterItem()">filter</button>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-center justify-content-center">
+                        <button class="btn w-100 btn-success font-weight-bold text-white m-1 py-3 m-2" id="sliceBtn"
+                        onclick="sliceItem()">Slice </button>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-center justify-content-center">
+                        <button class="btn w-100 btn-success font-weight-bold text-white m-1 py-3 m-2" id="spliceBtn"
+                        onclick="spliceItem()">Splice</button>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-center justify-content-center">
+                        <button class="btn w-100 btn-success font-weight-bold text-white m-1 py-3 m-2" id="lengthBtn"
+                        onclick="lengthItem()">Length</button>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-center justify-content-center">
+                        <button class="btn w-100 btn-success font-weight-bold text-white m-1 py-3 m-2" id="stringBtn"
+                        onclick="stringItem()">String</button>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
+
+                <div class="row"> <!-- Result box -->
+                    <div class="col pt-3">
                         <div class="outputBox d-flex py-3 m-auto">
-                            <input type="text" id="output" class="output w-75 px-2 py-3 m-auto rounded shadow border-0"
-                               readonly>
+                            <input type="text" id="output" placeholder="Array:" class="output bg-light w-75 px-2 py-3 m-auto rounded shadow border-0"
+                                readonly>
                         </div>
                     </div>
                 </div>
