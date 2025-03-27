@@ -2,3 +2,30 @@ button{
     font-size: 1.6rem !important;
     min-width: 10rem;
 }
+
+h2{
+    width: 16ch;
+    text-wrap: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(20, start) infinite alternate-reverse;
+}
+
+input{
+    /* background-color: aqua !important; */
+    width: 75%;
+    margin: auto;
+}
+
+@keyframes typing{
+    from{
+        width: 0ch;
+    }
+}
+
+/* Small devices (landscape phones, upto 576px and below) */
+/* @media (width <=576px) */
+@media (max-width: 576px) {
+    input{
+    width: 100%;
+   }
+  }
