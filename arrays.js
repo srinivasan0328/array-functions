@@ -239,3 +239,4 @@ function stringItem() {
   alert(`📝 Array as String: ${arrayString}`); // Show in alert
   document.getElementById("output").value = `Array: ${arrayString}`; // Update output box
 }
+
