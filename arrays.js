@@ -2,25 +2,6 @@
 // where we going to store the user input arrays
 let array = [];
 
-//getting input field, buttons and output field
-
-let inputValue = document.getElementById("input");
-let pushButton = document.getElementById("pushBtn");
-let popButton = document.getElementById("popBtn");
-let deleteButton = document.getElementById("deleteBtn");
-let shiftButton = document.getElementById("shiftBtn");
-let unshiftButton = document.getElementById("unShiftBtn");
-let findButton = document.getElementById("findBtn");
-let reverseButton = document.getElementById("reverseBtn");
-let sortButton = document.getElementById("sortBtn");
-let concatButton = document.getElementById("concatBtn");
-let filterButton = document.getElementById("filterBtn");
-let sliceButton = document.getElementById("sliceBtn");
-let spliceButton = document.getElementById("spliceBtn");
-let lengthButton = document.getElementById("lengthBtn");
-let stringButton = document.getElementById("stringBtn");
-let outputFiled = document.getElementById("output");
-
 //output box function
 function updatingOutput() {
   document.getElementById("output").value = `Array: ${array}`;
@@ -38,7 +19,7 @@ function pushItem() {
   }
 }
 
-//function push
+//function pop
 function popItem() {
   if (array.length > 0) {
     array.pop();
@@ -56,18 +37,18 @@ function deleteItem() {
     alert("Please enter a value to delete!");
   } else if (index !== -1) {
     array.splice(index, 1); // Remove the item
-    document.getElementById("input").value = ""; // Clear input field
-    updatingOutput(); // Update output field
+    document.getElementById("input").value = "";
+    updatingOutput();
   } else {
     alert("Value not found in the array!");
   }
 }
 
-// Function to remove the first item from the array
+// Function shift (remove first element in the array list)
 function shiftItem() {
   if (array.length > 0) {
     array.shift(); // Removes the first element of the array
-    updatingOutput(); // Update the displayed array
+    updatingOutput();
   } else {
     alert("Array is empty!");
   }
@@ -78,8 +59,8 @@ function unshiftItem() {
   let inputValue = document.getElementById("input").value.trim();
   if (inputValue !== "") {
     array.unshift(inputValue); // Adds the value at the beginning of the array
-    document.getElementById("input").value = ""; // Clear input field
-    updatingOutput(); // Update the displayed array
+    document.getElementById("input").value = "";
+    updatingOutput();
   } else {
     alert("Please enter a value!");
   }
@@ -97,8 +78,8 @@ function findItem() {
       alert("No Items found in an Array set");
     }
 
-    document.getElementById("input").value = ""; // Clear input field
-    updatingOutput(); // Update output
+    document.getElementById("input").value = "";
+    updatingOutput();
   } else {
     alert("Please enter a value to search!");
   }
@@ -149,8 +130,6 @@ function concatItem() {
   }
 }
 
-
-
 // Function to filter the array based on user input
 function filterItem() {
   if (array.length === 0) {
@@ -174,7 +153,6 @@ function filterItem() {
   }
 }
 
-
 // Function to slice the array
 function sliceItem() {
   if (array.length === 0) {
@@ -196,7 +174,6 @@ function sliceItem() {
       alert("⚠️ Please enter a valid number for the start index.");
   }
 }
-
 
 // Function to splice the array
 function spliceItem() {
@@ -225,18 +202,16 @@ function spliceItem() {
   }
 }
 
-
 // Function to get array length
 function lengthItem() {
   let length = array.length; // Get array length
-  alert(`📏 Length of Array: ${length}`); // Show in alert
-  // document.getElementById("output").value = `Array Length: ${length}`; // Update output box
+  alert(`📏 Length of Array: ${length}`);
+  // document.getElementById("output").value = `Array Length: ${length}`;
 }
 
 // Function to convert array to string
 function stringItem() {
   let arrayString = array.toString(); // Convert array to string
-  alert(`📝 Array as String: ${arrayString}`); // Show in alert
-  document.getElementById("output").value = `Array: ${arrayString}`; // Update output box
+  alert(`📝 Array as String: ${arrayString}`);
+  document.getElementById("output").value = `Array: ${arrayString}`;
 }
-

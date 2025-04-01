@@ -45,7 +45,17 @@ input {
     grid-template-columns: repeat(2, 1fr);
     padding: 0;
     margin: auto;
-    overflow-wrap: anywhere;
+    /* overflow-wrap: anywhere; */
+    width: 100%;
+  }
+
+  .inputBody{
+    width: 100% !important;
+    margin: auto;
+  }
+
+  .inputBlock{
+    width: 100%;
   }
 
   .buttonBlock {
